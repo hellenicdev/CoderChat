@@ -1,0 +1,52 @@
+:root{
+--bg:#0b0f14;
+--panel:#071018;
+--accent:#00e6a8;
+--muted:#8b99a6;
+--glass: rgba(255,255,255,0.03);
+--card: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+--radius:12px;
+--mono: "Segoe UI Mono", "SFMono-Regular", Menlo, Monaco, monospace;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+margin:0;
+background: radial-gradient(1200px 600px at 10% 10%, rgba(0,230,168,0.04), transparent), var(--bg);
+color:#e6eef3;
+font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+.app{display:flex;height:100vh;gap:18px;padding:18px}
+.sidebar{
+width:220px;background:var(--panel);border-radius:var(--radius);padding:16px;display:flex;flex-direction:column;gap:12px;box-shadow:0 6px 24px rgba(2,6,23,0.6);
+}
+.brand{font-weight:700;color:var(--accent);font-family:var(--mono);letter-spacing:1px}
+.nav{display:flex;flex-direction:column;height:100%}
+.new-chat{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:10px;color:var(--muted);cursor:pointer}
+.new-chat:hover{color:var(--accent);border-color:rgba(0,230,168,0.12)}
+.spacer{flex:1}
+.version{color:var(--muted);font-size:12px}
+
+
+.main{flex:1;display:flex;flex-direction:column}
+.topbar{display:flex;align-items:center;gap:12px;padding:12px 18px}
+.topbar h1{margin:0;font-size:18px}
+.subtitle{margin:0;color:var(--muted);font-size:13px}
+
+
+.messages{flex:1;overflow:auto;padding:18px 24px;display:flex;flex-direction:column;gap:12px;border-radius:12px;background:var(--card);backdrop-filter: blur(6px);box-shadow: inset 0 1px 0 rgba(255,255,255,0.02)}
+
+
+.msg{max-width:78%;padding:12px 14px;border-radius:12px;line-height:1.4;font-size:14px}
+.msg.user{align-self:flex-end;background:linear-gradient(180deg, rgba(0,230,168,0.12), rgba(0,230,168,0.06));color:#00110a}
+.msg.bot{align-self:flex-start;background:rgba(255,255,255,0.03);color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+
+
+.composer{display:flex;gap:12px;padding:14px 18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));align-items:end}
+.input{flex:1;resize:none;padding:10px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);outline:none;color:inherit;font-size:14px;min-height:44px}
+.send{background:linear-gradient(90deg, rgba(0,230,168,0.12), rgba(0,230,168,0.06));border:none;padding:10px 16px;border-radius:10px;cursor:pointer;font-weight:600}
+.send:active{transform:translateY(1px)}
+
+
+/* small responsive */
+@media (max-width:800px){.sidebar{display:none}.app{padding:12px}.messages{padding:12px}.composer{padding:10px}}
